@@ -102,7 +102,7 @@ const questions = [
   },
   {
     question: "6. You work at an elementary school now, but at least you get to pick your position. You're the...",
-    image: "Images/Question6.gif",
+    image: "images/Question6.gif",
     answers: {
       I: {
         text: "Art Teacher",
@@ -120,7 +120,7 @@ const questions = [
   },
   {
     question: "7. Everyone at your school/work HAS to join a club, what club do you join?",
-    image: "Images/Question7.gif",
+    image: "images/Question7.gif",
     answers: {
       S: {
         text: "Writing club",
@@ -138,7 +138,7 @@ const questions = [
   },
   {
     question: "8. You just parked at your favorite city park. What next?",
-    image: "Images/Question8.gif",
+    image: "images/Question8.gif",
     answers: {
       J: {
         text: "Find a new hiking trail and give it a try.",
@@ -228,7 +228,7 @@ function showResult() {
   resultTextContainer.innerHTML = `
           `;
 
-  resultImage.src = `Images/Play_${result}_Results.png`;
+  resultImage.src = `images/Play_${result}_Results.png`;
   resultImage.alt = `${result} Image`;
 
   document.getElementById("quiz").style.display = "none";
