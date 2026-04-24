@@ -1,50 +1,336 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InstinctualActOfPlay</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://use.typekit.net/zxe2lpq.css">
+    <title>Instinctual Act of Play Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Ancizar Serif", serif;
+            background: #1a1a1a; 
+            background-image: url('Images/background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .quiz-card {
+            background-image: url('Images/card.jpg');
+            background-size: cover;
+            background-color: #fde4e0;
+            border-radius: 1rem;
+        }
+        .btn-play {
+            background-image: url("Images/button.jpg");
+            background-size: cover;
+            background-color: #a6624d;
+            color: #efaa92;
+            transition: all 0.3s ease;
+        }
+        /* Ensures all text inside .btn-play turns white on hover */
+        .btn-play:hover {
+            background-image: url("Images/hover.jpg");
+            color: #fff !important;
+        }
+        h1, p.question-text {
+            font-family: "Caveat", cursive;
+            padding-bottom: 1rem;
+        }
+        #progress-bar {
+            transition: width 0.4s ease-in-out;
+        }
+        .card-btn {
+            background-color: #f6eeeb;
+            background-image: url("Images/button.jpg");
+            background-size: cover;
+            border: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            width: 100%; 
+            max-width: 240px; 
+            min-height: 220px; 
+            display: flex;     
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            margin: 0 auto;
+        }
+        /* Ensures the span text inside .card-btn turns white on hover */
+        .card-btn:hover {
+            background-image: url("Images/hover.jpg");
+            border-color: #9ac18b;
+            transform: translateY(-2px);
+        }
+        .card-btn:hover span {
+            color: #fff !important;
+        }
+        .card-btn img {
+            max-width: 110px; 
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
-<body>
-    
-    <div class="quiz-container">
-        <div class="start-page" id="start-page">
-            <img src="images/logo.png" class="top-image">
-            <p2>A personality quiz to help you identify what kind of play personality you are and the perfect type of play for your life!</p2>
-            <br>
-            <img src="images/image1.gif" class="top-image">
-            <br>
-            <button id="start-button" class="start-button">Let's Start!</button>
-            <a href="https://arimlg808.wixsite.com/actofplay" target="_blank" rel="noopener noreferrer"><button class="start-button">Learn More</button></a>
-            <br>
-            <br>
-            <a href="https://arimlg808.wixsite.com/ariana-garber" target="_blank" style="font-size: 14px; text-decoration: none;">Designed & created by Ariana Garber</a>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="quiz-card shadow-2xl w-full max-w-3xl mx-auto overflow-hidden p-8 text-center">
+        
+        <header>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 pb-2 inline-block">
+                The Instinctual Act Of Play: <br> Personality Quiz <br>
+            </h1>
+        </header>
+
+        <div id="progress-container" class="w-full bg-gray-300 h-3 rounded-full my-6 overflow-hidden hidden">
+            <div id="progress-bar" class="h-full w-0" style="background-color: #9ac18b;"></div>
         </div>
 
-        <div class="quiz-page" id="quiz-page" style="display: none;">
-            <div id="quiz">
+        <div id="start-page">
+            <img src="Images/image1.gif" alt="Intro Animation" class="w-full rounded-lg max-w-md mx-auto">
+            <p class="text-xl mb-6 font-medium text-gray-800">
+                Help identify what kind of play personality you are <br> and the perfect type of play for your life!
+            </p>
+            
+            <div class="flex flex-col space-y-4 max-w-xs mx-auto mb-12">
+                <button id="start-button" class="btn-play font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide">
+                    Let's Start!
+                </button>
+                <a href="https://arimlg808.wixsite.com/actofplay" target="_blank" class="btn-play font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide">
+                    Learn More
+                </a>
             </div>
-            <div id="result" style="display: none;">
-                <p>Now that you know the perfect play for you...</p>
 
-                <div class="result-image">
-                    <img id="result-image" src="" alt="Result Image">
+            <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto">
+                <div class="flex-1 px-4">
+                    <p class="text-sm text-gray-600 italic leading-tight">
+                        All information is resourced from research performed by The National Institute of Play
+                    </p>
                 </div>
-                <br>
-                <p>Start Playing!</p>
-                <br>
-                <a href="https://arimlg808.wixsite.com/ariana-garber" target="_blank" style="font-size: 14px; text-decoration: none;">Designed & created by Ariana Garber</a>
-                <br>
-                <a href="PlayQuiz.html" rel="noopener noreferrer"><button class="restart-button">Restart</button></a>  
-                <a href="https://arimlg808.wixsite.com/actofplay" target="_blank" rel="noopener noreferrer"><button class="start-button">Learn More</button></a>
-                <div class="result-content">
-                    <div class="result-text">
-                    </div>
+                
+                <div class="h-10 w-px bg-gray-400"></div> 
+                
+                <div class="flex-1 px-4">
+                    <p class="text-sm text-gray-600 italic leading-tight">
+                        Code is developed through <br> Google Gemini
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-page" class="hidden">
+            <div id="quiz-content">
+                <p id="question-counter" class="text-sm font-bold uppercase tracking-widest mb-2" style="color: #b06059;"></p>
+                <p id="question-display" class="question-text text-3xl md:text-3xl font-bold text-gray-900 pb-2 inline-block"></p>
+                
+                <div id="answers-container" class="grid grid-cols-2 gap-4 md:gap-8 justify-center items-center mb-8"></div>
+                
+                <div class="max-w-xs mx-auto">
+                    <button id="abort-quiz" class="btn-play w-full font-bold py-3 px-6 rounded-lg text-sm uppercase tracking-wide">
+                        Return to Start
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-page" class="hidden">
+            <img id="result-image" src="" alt="Result" class="w-full max-w-sm mx-auto rounded-lg shadow-lg mb-6">
+            <p class="text-lg text-gray-800 mb-2">Now that you know the perfect play for you...</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Start Playing!</h2>
+
+            <div class="flex flex-col space-y-4 max-w-xs mx-auto mb-12">
+                <button id="restart-button" class="btn-play font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide">
+                    Back to Home
+                </button>
+                <a href="https://arimlg808.wixsite.com/actofplay" target="_blank" class="btn-play font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide">
+                    Learn More
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto">
+                <div class="flex-1 px-4">
+                    <p class="text-sm text-gray-600 italic leading-tight">
+                        All information is resourced from research performed by The National Institute of Play
+                    </p>
+                </div>
+                
+                <div class="h-10 w-px bg-gray-400"></div> 
+                
+                <div class="flex-1 px-4">
+                    <p class="text-sm text-gray-600 italic leading-tight">
+                        Code is developed through <br> Google Gemini
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <script src="PlayQuiz.js"></script>
+
+    <script>
+        const results = { Joker: 1, Kinesthetic: 2, Explorer: 3, Competitor: 4, Director: 5, Creator: 6, Storyteller: 7, Collector: 8 };
+
+        const questions = [
+            {
+                question: "You have $50 that you HAVE to spend on one of the following items, what do you get?",
+                options: [
+                    { text: "A ridiculous hat.", image: "Images/Hat.png", scores: [results.Joker, results.Collector] },
+                    { text: "A pair of binoculars.", image: "Images/Binoculars.png", scores: [results.Kinesthetic, results.Explorer, results.Competitor] },
+                    { text: "A set of traffic cones.", image: "Images/Cones.png", scores: [results.Collector, results.Explorer] },
+                    { text: "A ticket to a writing workshop.", image: "Images/Ticket.png", scores: [results.Director, results.Storyteller, results.Creator] }
+                ]
+            },
+            {
+                question: "Your new podcast is most likely to be called...",
+                options: [
+                    { text: "It Started with One: My Quest to Complete my Collection", image: "Images/POD.png", scores: [results.Explorer, results.Collector] },
+                    { text: "The Neighborhood: Fascinating Backstories", image: "Images/Radio.png", scores: [results.Joker, results.Director, results.Storyteller, results.Creator] },
+                    { text: "You Can't Make a Podcast About That: My Journey in Making Abstract Art", image: "Images/Paintbrush.png", scores: [results.Creator, results.Storyteller] },
+                    { text: "How to Do Stuff: Weekly Instructions", image: "Images/YT.png", scores: [results.Kinesthetic, results.Competitor] }
+                ]
+            },
+            {
+                question: "Surprise! Your home suddenly has a new bedroom. You convert it into...",
+                options: [
+                    { text: "A dance studio", image: "Images/Ballet.png", scores: [results.Kinesthetic, results.Explorer, results.Storyteller, results.Creator] },
+                    { text: "A decked out gaming PC space", image: "Images/Nintendo.png", scores: [results.Joker, results.Competitor] },
+                    { text: "A space to organize and display your collections.", image: "Images/Shelfs.png", scores: [results.Collector] },
+                    { text: "An art studio", image: "Images/Pencils.png", scores: [results.Explorer, results.Director, results.Collector, results.Storyteller, results.Creator] }
+                ]
+            },
+            {
+                question: "You pick up your long-distance best friend at the airport and take them to...",
+                options: [
+                    { text: "A place you've never been before", image: "Images/Compass.png", scores: [results.Joker, results.Kinesthetic, results.Explorer] },
+                    { text: "Your latest eBay purchase for your collection", image: "Images/Package.png", scores: [results.Competitor, results.Explorer, results.Collector] },
+                    { text: "Show them your latest bargain find from online.", image: "Images/Bargain.png", scores: [results.Competitor, results.Collector] },
+                    { text: "Show them a painting you've been working on", image: "Images/Canvas.png", scores: [results.Director, results.Storyteller, results.Creator] }
+                ]
+            },
+            {
+                question: "Your new youtube series features you...",
+                options: [
+                    { text: "Performing tricks you learned", image: "Images/Tent.png", scores: [results.Joker, results.Kinesthetic, results.Creator] },
+                    { text: "Discussing the nuances of a specific interest", image: "Images/YT.png", scores: [results.Competitor, results.Director, results.Collector] },
+                    { text: "Just 3 minutes of making weird faces.", image: "Images/Faces.png", scores: [results.Joker]},
+                    { text: "Day in the life videos", image: "Images/Recorder.png", scores: [results.Storyteller, results.Explorer] }
+                ]
+            },
+            {
+                question: "You work at an elementary school now. You're the...",
+                options: [
+                    { text: "Art Teacher", image: "Images/Paint.png", scores: [results.Collector, results.Storyteller, results.Creator] },
+                    { text: "PE Instructor", image: "Images/Tennis.png", scores: [results.Joker, results.Kinesthetic, results.Competitor] },
+                    { text: "Librarian", image: "Images/Library.png", scores: [results.Storyteller] },
+                    { text: "Principal", image: "Images/Book.png", scores: [results.Explorer, results.Competitor, results.Director] }
+                ]
+            },
+            {
+                question: "Everyone at your school/work HAS to join a club, what club do you join?",
+                options: [
+                    { text: "Writing Club", image: "Images/Journal.png", scores: [results.Explorer, results.Director, results.Storyteller, results.Creator] },
+                    { text: "Improv Group", image: "Images/Movie.png", scores: [results.Joker, results.Collector] },
+                    { text: "Trading Card Club", image: "Images/Cards.png", scores: [results.Collector, results.Competitor] },
+                    { text: "Marathon Training Club", image: "Images/Run.png", scores: [results.Kinesthetic, results.Competitor] }
+                ]
+            },
+            {
+                question: "You just parked at your favorite city park. What next?",
+                options: [
+                    { text: "Find a new hiking trail", image: "Images/Hike.png", scores: [results.Kinesthetic, results.Explorer, results.Director] },
+                    { text: "Find folks for a pickup game", image: "Images/Pickle.png", scores: [results.Kinesthetic, results.Competitor] },
+                    { text: "Go for a run and try to beat your last time.", image: "Images/Run.png", scores: [results.Kinesthetic, results.Competitor] },
+                    { text: "Go make up backstories for the ducks", image: "Images/Duck.png", scores: [results.Joker, results.Collector, results.Storyteller, results.Creator] }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        const startPage = document.getElementById('start-page');
+        const quizPage = document.getElementById('quiz-page');
+        const resultPage = document.getElementById('result-page');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const questionCounter = document.getElementById('question-counter');
+        const questionDisplay = document.getElementById('question-display');
+        const answersContainer = document.getElementById('answers-container');
+        const resultImage = document.getElementById('result-image');
+        const abortQuizBtn = document.getElementById('abort-quiz');
+
+        function updateProgressBar() {
+            const total = questions.length;
+            const progress = (currentQuestion / total) * 100;
+            progressBar.style.width = `${progress}%`;
+            questionCounter.textContent = `Question ${currentQuestion + 1} of ${total}`;
+        }
+
+        function startQuiz() {
+            startPage.classList.add('hidden');
+            resultPage.classList.add('hidden');
+            quizPage.classList.remove('hidden');
+            progressContainer.classList.remove('hidden');
+            currentQuestion = 0;
+            userAnswers = {};
+            showQuestion();
+        }
+
+        function goToHomePage() {
+            resultPage.classList.add('hidden');
+            quizPage.classList.add('hidden');
+            progressContainer.classList.add('hidden');
+            startPage.classList.remove('hidden');
+            currentQuestion = 0;
+            userAnswers = {};
+            progressBar.style.width = '0%';
+        }
+
+        function showQuestion() {
+            updateProgressBar();
+            const q = questions[currentQuestion];
+            questionDisplay.textContent = q.question;
+            
+            answersContainer.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'card-btn p-6 rounded-xl shadow-sm';
+                btn.innerHTML = `
+                    <img src="${opt.image}" alt="${opt.text}" onerror="this.src='Images/placeholder.png'">
+                    <span class="text-gray-800 font-bold text-sm md:text-base leading-tight transition-colors duration-300">${opt.text}</span>
+                `;
+                btn.onclick = () => handleAnswer(opt.scores);
+                answersContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(scores) {
+            scores.forEach(scoreID => {
+                const cat = Object.keys(results).find(name => results[name] === scoreID);
+                if (cat) {
+                    userAnswers[cat] = (userAnswers[cat] || 0) + 1;
+                }
+            });
+
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            quizPage.classList.add('hidden');
+            progressContainer.classList.add('hidden');
+            resultPage.classList.remove('hidden');
+            const topResult = Object.keys(userAnswers).reduce((a, b) => userAnswers[a] > userAnswers[b] ? a : b);
+            resultImage.src = `Images/Play_${topResult}_Results.png`;
+            resultImage.alt = topResult;
+        }
+
+        document.getElementById('start-button').addEventListener('click', startQuiz);
+        document.getElementById('restart-button').addEventListener('click', goToHomePage);
+        abortQuizBtn.addEventListener('click', goToHomePage);
+    </script>
 </body>
 </html>
