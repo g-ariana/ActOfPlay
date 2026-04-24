@@ -100,21 +100,22 @@
                 </a>
             </div>
 
-            <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto">
-                <div class="flex-1 px-4">
-                    <p class="text-sm text-gray-600 italic leading-tight">
-                        All information is resourced from research performed by The National Institute of Play
-                    </p>
+            <div class="footer-container">
+                <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto mb-4">
+                    <div class="flex-1 px-4">
+                        <p class="text-sm text-gray-600 italic leading-tight">
+                            All information is resourced from research performed by The National Institute of Play
+                        </p>
+                    </div>
+                    <div class="h-10 w-px bg-gray-400"></div> 
+                    <div class="flex-1 px-4">
+                        <p class="text-sm text-gray-600 italic leading-tight">
+                            Code is developed through <br> Google Gemini
+                        </p>
+                    </div>
                 </div>
-                <div class="h-10 w-px bg-gray-400"></div> 
-                <div class="flex-1 px-4">
-                    <p class="text-sm text-gray-600 italic leading-tight">
-                        Code is developed through <br> Google Gemini
-                    </p>
-                     <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto">
-               </div>
-                         <div>
-                    <p class="text-sm text-gray-600 italic leading-tight">
+                <div class="border-t border-gray-400 pt-4 max-w-xl mx-auto">
+                    <p class="text-sm text-gray-600 italic leading-tight text-center">
                         Code for the quiz is inspired by Nina Campbells adapted code for 'Fruitful Personas'. As well as I-see Jaidee @izonfalzo
                     </p>
                 </div>
@@ -128,10 +129,31 @@
                 
                 <div id="answer-options-container" class="grid grid-cols-2 gap-4 md:gap-8 justify-center items-center mb-8"></div>
                 
-                <div class="max-w-xs mx-auto">
+                <div class="max-w-xs mx-auto mb-12">
                     <button id="abort-button" class="btn-play w-full font-bold py-3 px-6 rounded-lg text-sm uppercase tracking-wide">
                         Return to Start
                     </button>
+                </div>
+
+                <div class="footer-container">
+                    <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto mb-4">
+                        <div class="flex-1 px-4">
+                            <p class="text-sm text-gray-600 italic leading-tight">
+                                All information is resourced from research performed by The National Institute of Play
+                            </p>
+                        </div>
+                        <div class="h-10 w-px bg-gray-400"></div> 
+                        <div class="flex-1 px-4">
+                            <p class="text-sm text-gray-600 italic leading-tight">
+                                Code is developed through <br> Google Gemini
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-400 pt-4 max-w-xl mx-auto">
+                        <p class="text-sm text-gray-600 italic leading-tight text-center">
+                            Code for the quiz is inspired by Nina Campbells adapted code for 'Fruitful Personas'. As well as I-see Jaidee @izonfalzo
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,16 +170,23 @@
                 </a>
             </div>
             
-            <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto">
-                <div class="flex-1 px-4">
-                    <p class="text-sm text-gray-600 italic leading-tight">
-                        All information is resourced from research performed by The National Institute of Play
-                    </p>
+            <div class="footer-container">
+                <div class="flex items-center justify-center border-t border-gray-400 pt-6 max-w-xl mx-auto mb-4">
+                    <div class="flex-1 px-4">
+                        <p class="text-sm text-gray-600 italic leading-tight">
+                            All information is resourced from research performed by The National Institute of Play
+                        </p>
+                    </div>
+                    <div class="h-10 w-px bg-gray-400"></div> 
+                    <div class="flex-1 px-4">
+                        <p class="text-sm text-gray-600 italic leading-tight">
+                            Code is developed through <br> Google Gemini
+                        </p>
+                    </div>
                 </div>
-                <div class="h-10 w-px bg-gray-400"></div> 
-                <div class="flex-1 px-4">
-                    <p class="text-sm text-gray-600 italic leading-tight">
-                        Code is developed through <br> Google Gemini
+                <div class="border-t border-gray-400 pt-4 max-w-xl mx-auto">
+                    <p class="text-sm text-gray-600 italic leading-tight text-center">
+                        Code for the quiz is inspired by Nina Campbells adapted code for 'Fruitful Personas'. As well as I-see Jaidee @izonfalzo
                     </p>
                 </div>
             </div>
@@ -167,7 +196,6 @@
     <script>
         const results = { Joker: 1, Kinesthetic: 2, Explorer: 3, Competitor: 4, Director: 5, Creator: 6, Storyteller: 7, Collector: 8 };
 
-        // Aligned to Daily Nebraskan Structure: Array of question objects with "options" array
         const allQuestions = [
             {
                 question: "You are standing in a bizarre boutique where you can claim only one of the following.",
@@ -197,7 +225,7 @@
                 ]
             },
             {
-                question: "ou pick up your long-distance best friend at the airport and take them?",
+                question: "You pick up your long-distance best friend at the airport and take them to?",
                 options: [
                     { text: "Uncharted territory", image: "images/Compass.png", scores: [results.Joker, results.Kinesthetic, results.Explorer] },
                     { text: "Your latest purchase for your collectables", image: "images/Package.png", scores: [results.Competitor, results.Explorer, results.Collector] },
@@ -235,7 +263,7 @@
             {
                 question: "You just got to your favorite city park. What do you do next?",
                 options: [
-                    { text: "Find a new hiking trail", image: "images/Hike.png", scores: [results.Kinesthetic, results.Explorer, results.Director] },
+                    { text: "Find a new hiking trail", image: "images/Hike.png", scores: [results.Kinesthetic, results.Explorer, Hyde: results.Director] },
                     { text: "Find folks for a pickup game", image: "images/Pickle.png", scores: [results.Kinesthetic, results.Competitor] },
                     { text: "Go for a run and try to beat your last time.", image: "images/Run.png", scores: [results.Kinesthetic, results.Competitor] },
                     { text: "Go make up backstories for the ducks", image: "images/Duck.png", scores: [results.Joker, results.Collector, results.Storyteller, results.Creator] }
@@ -243,7 +271,6 @@
             }
         ];
 
-        // --- DOM ELEMENTS ---
         const startScreen = document.getElementById('start-screen');
         const quizScreen = document.getElementById('quiz-screen');
         const resultsScreen = document.getElementById('results-screen');
@@ -257,11 +284,8 @@
         const answerOptionsContainer = document.getElementById('answer-options-container');
         const resultImage = document.getElementById('result-image');
 
-        // --- QUIZ STATE ---
         let currentQuestionIndex = 0;
         let userAnswers = {};
-
-        // --- FUNCTIONS ---
 
         function startGame() {
             startScreen.classList.add('hidden');
@@ -283,16 +307,12 @@
         function displayQuestion() {
             const question = allQuestions[currentQuestionIndex];
             const total = allQuestions.length;
-            
-            // Progress Update
             const progress = (currentQuestionIndex / total) * 100;
             progressBar.style.width = `${progress}%`;
             progressText.textContent = `Question ${currentQuestionIndex + 1} of ${total}`;
-            
             questionText.textContent = question.question;
             answerOptionsContainer.innerHTML = '';
 
-            // Generate buttons from "options" array (matching reference logic)
             question.options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.className = 'card-btn p-6 rounded-xl shadow-sm';
@@ -325,14 +345,11 @@
             quizScreen.classList.add('hidden');
             progressContainer.classList.add('hidden');
             resultsScreen.classList.remove('hidden');
-            
-            // Result logic matches original persona tally
             const topResult = Object.keys(userAnswers).reduce((a, b) => userAnswers[a] > userAnswers[b] ? a : b);
             resultImage.src = `images/Play_${topResult}_Results.png`;
             resultImage.alt = topResult;
         }
 
-        // --- EVENT LISTENERS ---
         startButton.addEventListener('click', startGame);
         restartButton.addEventListener('click', goToHomePage);
         abortButton.addEventListener('click', goToHomePage);
